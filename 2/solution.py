@@ -22,3 +22,21 @@ for word in content:
 print(two_count * three_count)
 
 # part 2
+def match(w1, w2):    
+    matching = [x == y for (x, y) in zip(list(w1), list(w2))] 
+    if matching.count(False) == 1:
+        return ''.join([w1[i] for i in range(len(matching)) if matching[i]])
+    return False
+
+assert match("abcd", "abce") == "abc" 
+assert match("dace", "dbce") == "dce"
+assert match("abcd", "abcd") == False
+assert match("abcd", "bcda") == False
+
+for index, word in enumerate(content):
+    for second_word in content[index:]:
+        rv = match(word, second_word)
+        if not rv:
+            continue
+        print(rv)
+
