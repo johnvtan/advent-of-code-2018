@@ -20,7 +20,6 @@ def react(polymer):
 print(react(content))
 
 # part 2
-
 polymer_types = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 shortest = len(content)
